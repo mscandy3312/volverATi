@@ -56,30 +56,27 @@ export default function Home() {
     setSubmitError("");
     setIsSubmitting(true);
 
-    // AQUÍ VA LA URL DEL WEBHOOK DE GOOGLE APPS SCRIPT O SHEETDB
+    // Webhook de Google Apps Script para guardar registros en Google Sheets
     const GOOGLE_SHEETS_WEBHOOK_URL =
-      "// AQUÍ VA LA URL DEL WEBHOOK DE GOOGLE APPS SCRIPT O SHEETDB";
+      "https://script.google.com/macros/s/AKfycbwICELeGUzEhavgnUkw8oG4Wn2-ZDbKsoKdNS8o3OSLHgk8H4cy4uolBI_fsPLetDeY/exec";
 
     try {
-      // Si hay un webhook configurado, realizamos la petición POST
-      if (
-        GOOGLE_SHEETS_WEBHOOK_URL &&
-        !GOOGLE_SHEETS_WEBHOOK_URL.includes("AQUÍ VA LA URL")
-      ) {
-        await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...formData,
-            fechaRegistro: new Date().toISOString(),
+      await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          email: formData.email,
+          momento: formData.momento,
+          acepto: formData.acepto ? "Sí" : "No",
+          fechaRegistro: new Date().toLocaleString("es-MX", {
+            timeZone: "America/Mexico_City",
           }),
-        });
-      } else {
-        // Simulamos respuesta rápida de red para la demostración
-        await new Promise((resolve) => setTimeout(resolve, 1200));
-      }
+        }),
+      });
 
       setIsSubmitting(false);
       setIsSubmitted(true);
