@@ -401,7 +401,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#6B7A65] to-[#D8B89C] rounded-3xl rotate-3 blur-md opacity-40 group-hover:rotate-6 transition-transform" />
                   <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
                     <Image
-                      src="/images/marycarmen.jpg"
+                      src="/Mary-Carmen.jpeg"
                       alt="MaryCarmen - Facilitadora Volver a Ti"
                       fill
                       className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
@@ -641,15 +641,15 @@ export default function Home() {
           BOTÓN FLOTANTE DE WHATSAPP
          ========================================== */}
       <a
-        href="https://wa.me/5217771145006?text=Hola,%20quiero%20información%20sobre%20el%20webinar%20Volver%20a%20Ti"
+        href="https://chat.whatsapp.com/Fcr6EpMMAByFnd3rBYhG97?s=cl&p=a&mlu=4&ilr=4"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp"
+        aria-label="Unirse al grupo de WhatsApp"
         className="fixed bottom-6 right-6 z-50 group flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 animate-pulse-subtle"
       >
         <MessageCircle className="w-6 h-6 fill-current text-white stroke-[1.5]" />
         <span className="hidden sm:inline-block font-semibold text-sm tracking-wide">
-          ¿Dudas? Escríbenos
+          Unirme al Grupo de WhatsApp
         </span>
       </a>
 
