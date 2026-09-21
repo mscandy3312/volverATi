@@ -28,6 +28,7 @@ export default function Home() {
     nombre: "",
     email: "",
     momento: "Una pérdida importante",
+    otroMotivo: "",
     acepto: false,
   });
 
@@ -56,6 +57,11 @@ export default function Home() {
     setSubmitError("");
     setIsSubmitting(true);
 
+    const momentoFinal =
+      formData.momento === "Otro" && formData.otroMotivo.trim() !== ""
+        ? `Otro: ${formData.otroMotivo.trim()}`
+        : formData.momento;
+
     // Webhook de Google Apps Script para guardar registros en Google Sheets
     // ID de Implementación: AKfycbytpl40sBUianQxEoJ_fSKZp8MSaWjdXDWgj1fNgVu23Gf9mj85fjGBZ1rYqd_aX-ed
     const GOOGLE_SHEETS_WEBHOOK_URL =
@@ -71,7 +77,7 @@ export default function Home() {
         body: JSON.stringify({
           nombre: formData.nombre,
           email: formData.email,
-          momento: formData.momento,
+          momento: momentoFinal,
           acepto: formData.acepto ? "Sí" : "No",
           fechaRegistro: new Date().toLocaleString("es-MX", {
             timeZone: "America/Mexico_City",
@@ -589,6 +595,28 @@ export default function Home() {
                       </label>
                     ))}
                   </div>
+
+                  {/* Campo de texto dinámico si se elige 'Otro' */}
+                  {formData.momento === "Otro" && (
+                    <div className="mt-3 pt-1 animate-fadeIn">
+                      <label
+                        htmlFor="otroMotivo"
+                        className="block text-xs font-semibold text-[#6B7A65] mb-1.5"
+                      >
+                        Escribe la razón o momento particular que estás viviendo: *
+                      </label>
+                      <input
+                        type="text"
+                        id="otroMotivo"
+                        name="otroMotivo"
+                        required={formData.momento === "Otro"}
+                        value={formData.otroMotivo}
+                        onChange={handleInputChange}
+                        placeholder="Escribe aquí tu motivo..."
+                        className="w-full px-4 py-3 rounded-xl bg-white/95 border border-[#6B7A65]/50 text-[#3A4235] text-sm placeholder-[#5C6756]/50 focus:outline-none focus:ring-2 focus:ring-[#6B7A65] shadow-sm transition-all"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Checkbox Aceptación */}
