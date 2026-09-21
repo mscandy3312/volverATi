@@ -57,9 +57,9 @@ export default function Home() {
     setIsSubmitting(true);
 
     // Webhook de Google Apps Script para guardar registros en Google Sheets
-    // ID de Implementación: AKfycbyEkbmokRegrNvPiSrv7GwmQEccpygURuYyvQZfdg6TdSEaGOMzokZjmt2p80UhOfGA
+    // ID de Implementación: AKfycbytpl40sBUianQxEoJ_fSKZp8MSaWjdXDWgj1fNgVu23Gf9mj85fjGBZ1rYqd_aX-ed
     const GOOGLE_SHEETS_WEBHOOK_URL =
-      "https://script.google.com/macros/s/AKfycbyKXgO1oi9qIi5Kx6gtnUxjTg1XQnR4K3mWGsrvY8VIC8JDYQW3x6rsWccLEu0C2-2b/exec";
+      "https://script.google.com/macros/s/AKfycbytpl40sBUianQxEoJ_fSKZp8MSaWjdXDWgj1fNgVu23Gf9mj85fjGBZ1rYqd_aX-ed/exec";
 
     try {
       await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
