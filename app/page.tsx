@@ -289,9 +289,6 @@ export default function Home() {
               <div className="w-14 h-14 rounded-2xl bg-[#EBF0E9] text-[#6B7A65] flex items-center justify-center mb-6 shadow-inner">
                 <Brain className="w-7 h-7" />
               </div>
-              <span className="text-xs font-bold text-[#D8B89C] tracking-wider uppercase mb-1 block">
-                MÓDULO 1
-              </span>
               <h3 className="text-2xl font-serif font-bold text-[#3A4235] mb-3 flex items-center gap-2">
                 <span>🌿 CLARIDAD</span>
               </h3>
@@ -305,9 +302,6 @@ export default function Home() {
               <div className="w-14 h-14 rounded-2xl bg-[#EBF0E9] text-[#6B7A65] flex items-center justify-center mb-6 shadow-inner">
                 <Heart className="w-7 h-7" />
               </div>
-              <span className="text-xs font-bold text-[#D8B89C] tracking-wider uppercase mb-1 block">
-                MÓDULO 2
-              </span>
               <h3 className="text-2xl font-serif font-bold text-[#3A4235] mb-3 flex items-center gap-2">
                 <span>🌿 PODER PERSONAL</span>
               </h3>
@@ -321,9 +315,6 @@ export default function Home() {
               <div className="w-14 h-14 rounded-2xl bg-[#EBF0E9] text-[#6B7A65] flex items-center justify-center mb-6 shadow-inner">
                 <Compass className="w-7 h-7" />
               </div>
-              <span className="text-xs font-bold text-[#D8B89C] tracking-wider uppercase mb-1 block">
-                MÓDULO 3
-              </span>
               <h3 className="text-2xl font-serif font-bold text-[#3A4235] mb-3 flex items-center gap-2">
                 <span>🌿 DIRECCIÓN</span>
               </h3>
@@ -337,9 +328,6 @@ export default function Home() {
               <div className="w-14 h-14 rounded-2xl bg-[#6B7A65] text-white flex items-center justify-center mb-6 shadow-md">
                 <Sparkles className="w-7 h-7" />
               </div>
-              <span className="text-xs font-bold text-[#6B7A65] tracking-wider uppercase mb-1 block">
-                MÓDULO 4
-              </span>
               <h3 className="text-2xl font-serif font-bold text-[#3A4235] mb-3 flex items-center gap-2">
                 <span>🌿 IA COMO COPILOTO CONSCIENTE</span>
               </h3>
