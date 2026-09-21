@@ -15,9 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Volver a Ti | Webinar Gratuito con MaryCarmen",
+  title: "Volver a Ti | Webinar Gratuito con MaryCarmen Domínguez",
   description: "Cómo recuperar claridad, poder personal y dirección cuando la vida cambia. Descubre cómo la IA puede ser tu copiloto consciente.",
-  keywords: ["Volver a ti", "Webinar gratuito", "MaryCarmen", "Claridad mental", "Poder personal", "IA consciente"],
+  keywords: ["Volver a ti", "Webinar gratuito", "MaryCarmen Domínguez", "MaryCarmen", "Claridad mental", "Poder personal", "IA consciente"],
 };
 
 export default function RootLayout({

@@ -402,7 +402,7 @@ export default function Home() {
                   <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
                     <Image
                       src="/Mary-Carmen.jpeg"
-                      alt="MaryCarmen - Facilitadora Volver a Ti"
+                      alt="MaryCarmen Domínguez - Facilitadora Volver a Ti"
                       fill
                       className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                       priority
@@ -412,7 +412,7 @@ export default function Home() {
 
                 <div className="mt-6 text-center">
                   <h4 className="font-serif font-bold text-xl text-[#3A4235]">
-                    MaryCarmen
+                    MaryCarmen Domínguez
                   </h4>
                   <p className="text-xs sm:text-sm text-[#6B7A65] font-medium tracking-wide">
                     Educadora & Especialista en Tecnología
@@ -427,7 +427,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-3xl sm:text-4xl font-serif font-bold text-[#3A4235] leading-tight">
-                  Hola, soy MaryCarmen
+                  Hola, soy MaryCarmen Domínguez
                 </h3>
 
                 <p className="text-base sm:text-lg text-[#3A4235] font-medium leading-relaxed">
@@ -660,7 +660,7 @@ export default function Home() {
             <span>🌿 Volver a Ti</span>
             <span className="text-[#D8B89C]">|</span>
             <span className="font-sans font-normal text-xs text-[#5C6756]">
-              Webinar por MaryCarmen
+              Webinar por MaryCarmen Domínguez
             </span>
           </div>
           <p>© 2026 Volver a Ti. Todos los derechos reservados.</p>
