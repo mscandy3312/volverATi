@@ -574,49 +574,56 @@ export default function Home() {
                     <span>¿Qué describe mejor el momento que estás viviendo?</span>
                   </label>
                   <div className="space-y-2.5 pt-1">
-                    {opcionesMomento.map((opcion, idx) => (
-                      <label
-                        key={idx}
-                        className={`flex items-center gap-3 p-3.5 rounded-xl border transition-all cursor-pointer ${
-                          formData.momento === opcion
-                            ? "bg-[#EBF0E9] border-[#6B7A65] text-[#3A4235] font-medium shadow-sm"
-                            : "bg-white/60 border-[#D8B89C]/30 text-[#5C6756] hover:bg-white"
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="momento"
-                          value={opcion}
-                          checked={formData.momento === opcion}
-                          onChange={handleInputChange}
-                          className="w-4 h-4 text-[#6B7A65] focus:ring-[#6B7A65] accent-[#6B7A65]"
-                        />
-                        <span className="text-xs sm:text-sm">{opcion}</span>
-                      </label>
-                    ))}
-                  </div>
+                    {opcionesMomento.map((opcion, idx) => {
+                      const isSelected = formData.momento === opcion;
+                      const isOtro = opcion === "Otro";
 
-                  {/* Campo de texto dinámico si se elige 'Otro' */}
-                  {formData.momento === "Otro" && (
-                    <div className="mt-3 pt-1 animate-fadeIn">
-                      <label
-                        htmlFor="otroMotivo"
-                        className="block text-xs font-semibold text-[#6B7A65] mb-1.5"
-                      >
-                        Escribe la razón o momento particular que estás viviendo: *
-                      </label>
-                      <input
-                        type="text"
-                        id="otroMotivo"
-                        name="otroMotivo"
-                        required={formData.momento === "Otro"}
-                        value={formData.otroMotivo}
-                        onChange={handleInputChange}
-                        placeholder="Escribe aquí tu motivo..."
-                        className="w-full px-4 py-3 rounded-xl bg-white/95 border border-[#6B7A65]/50 text-[#3A4235] text-sm placeholder-[#5C6756]/50 focus:outline-none focus:ring-2 focus:ring-[#6B7A65] shadow-sm transition-all"
-                      />
-                    </div>
-                  )}
+                      return (
+                        <div key={idx} className="flex flex-col gap-2">
+                          <label
+                            className={`flex items-center gap-3 p-3.5 rounded-xl border transition-all cursor-pointer ${
+                              isSelected
+                                ? "bg-[#EBF0E9] border-[#6B7A65] text-[#3A4235] font-semibold shadow-sm"
+                                : "bg-white/60 border-[#D8B89C]/30 text-[#5C6756] hover:bg-white"
+                            }`}
+                          >
+                            <input
+                              type="radio"
+                              name="momento"
+                              value={opcion}
+                              checked={isSelected}
+                              onChange={handleInputChange}
+                              className="w-4 h-4 text-[#6B7A65] focus:ring-[#6B7A65] accent-[#6B7A65]"
+                            />
+                            <span className="text-xs sm:text-sm">{opcion}</span>
+                          </label>
+
+                          {/* Si elige 'Otro', se despliega de inmediato la caja para escribir */}
+                          {isOtro && isSelected && (
+                            <div className="mt-1 pl-2 pr-1 py-1 animate-fadeIn">
+                              <label
+                                htmlFor="otroMotivo"
+                                className="block text-xs font-semibold text-[#6B7A65] mb-1.5"
+                              >
+                                Por favor especifica tu motivo o situación: *
+                              </label>
+                              <input
+                                type="text"
+                                id="otroMotivo"
+                                name="otroMotivo"
+                                required
+                                autoFocus
+                                value={formData.otroMotivo}
+                                onChange={handleInputChange}
+                                placeholder="Escribe aquí tu motivo o situación..."
+                                className="w-full px-4 py-3.5 rounded-xl bg-white border-2 border-[#6B7A65] text-[#3A4235] text-sm placeholder-[#5C6756]/60 focus:outline-none focus:ring-2 focus:ring-[#6B7A65] shadow-md transition-all"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Checkbox Aceptación */}
